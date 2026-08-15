@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title></title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="hero">
+        <div class="hero-logo">
+          <img src="img/sslogo.png" alt="" class="logo" />
+        </div>
+        <div class="hero-copy">
+          <p class="copy-slot copy-slot--kicker" data-slot="kicker"></p>
+          <h1 class="copy-slot copy-slot--title" data-slot="title"></h1>
+        </div>
+      </header>
+
+      <main class="main">
+        <section class="search-panel" aria-label="여행 검색">
+          <div class="search-stack">
+            <div class="search-field" aria-label="출발지">
+              <span class="field-label">출발지</span>
+              <span class="field-value">
+                <span class="field-code">ICN</span>
+                <span class="field-name">Seoul / 서울</span>
+              </span>
+            </div>
+
+            <div class="search-group">
+              <button
+                type="button"
+                class="search-field search-field--button"
+                id="destination-toggle"
+                aria-expanded="false"
+                aria-controls="destination-panel"
+              >
+                <span class="field-label">도착지</span>
+                <span class="field-value" id="destination-value">
+                  <span class="field-placeholder">선택</span>
+                </span>
+              </button>
+              <div class="expand-panel" id="destination-panel" hidden>
+                <ul class="option-list" id="destination-list">
+                  <!-- 여행지 항목이 여기에 추가됩니다 -->
+                </ul>
+              </div>
+            </div>
+
+            <div class="search-group">
+              <button
+                type="button"
+                class="search-field search-field--button"
+                id="date-toggle"
+                aria-expanded="false"
+                aria-controls="date-panel"
+              >
+                <span class="field-label">여행 날짜</span>
+                <span class="field-value" id="date-value">
+                  <span class="field-placeholder">선택</span>
+                </span>
+              </button>
+              <div class="expand-panel" id="date-panel" hidden>
+                <div class="date-options" id="date-options">
+                  <p class="calendar-month">August 2026</p>
+                  <div class="calendar" aria-label="여행 날짜">
+                    <div class="calendar-weekdays">
+                      <span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
+                    </div>
+                    <div class="calendar-days">
+                      <span class="calendar-pad"></span>
+                      <span class="calendar-pad"></span>
+                      <span class="calendar-pad"></span>
+                      <span class="calendar-pad"></span>
+                      <span class="calendar-pad"></span>
+                      <span class="calendar-pad"></span>
+                      <span class="calendar-day is-disabled">1</span>
+                      <span class="calendar-day is-disabled">2</span>
+                      <span class="calendar-day is-disabled">3</span>
+                      <span class="calendar-day is-disabled">4</span>
+                      <span class="calendar-day is-disabled">5</span>
+                      <span class="calendar-day is-disabled">6</span>
+                      <span class="calendar-day is-disabled">7</span>
+                      <span class="calendar-day is-disabled">8</span>
+                      <span class="calendar-day is-disabled">9</span>
+                      <span class="calendar-day is-disabled">10</span>
+                      <span class="calendar-day is-disabled">11</span>
+                      <span class="calendar-day is-disabled">12</span>
+                      <span class="calendar-day is-disabled">13</span>
+                      <span class="calendar-day is-disabled">14</span>
+                      <span class="calendar-day is-disabled">15</span>
+                      <button
+                        type="button"
+                        class="calendar-day is-available"
+                        data-date="2026-08-16"
+                      >
+                        <span class="date-label">16</span>
+                      </button>
+                      <span class="calendar-day is-disabled">17</span>
+                      <span class="calendar-day is-disabled">18</span>
+                      <span class="calendar-day is-disabled">19</span>
+                      <span class="calendar-day is-disabled">20</span>
+                      <span class="calendar-day is-disabled">21</span>
+                      <span class="calendar-day is-disabled">22</span>
+                      <span class="calendar-day is-disabled">23</span>
+                      <span class="calendar-day is-disabled">24</span>
+                      <span class="calendar-day is-disabled">25</span>
+                      <span class="calendar-day is-disabled">26</span>
+                      <span class="calendar-day is-disabled">27</span>
+                      <span class="calendar-day is-disabled">28</span>
+                      <span class="calendar-day is-disabled">29</span>
+                      <span class="calendar-day is-disabled">30</span>
+                      <span class="calendar-day is-disabled">31</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button type="button" class="search-button" id="search-button">
+            검색
+          </button>
+        </section>
+
+        <section class="event-banner" aria-label="이벤트 배너">
+          <div class="event-banner-copy">
+            <p class="event-date">8월 16일</p>
+            <p class="event-title">이벤트 특가!</p>
+            <p class="event-sub">오늘 단 하루, 특별한 여행 찬스 ✈</p>
+          </div>
+        </section>
+
+        <section class="plan" aria-label="여행 계획">
+          <h2 class="plan-title">여행 계획을 세워보세요</h2>
+          <div class="plan-tabs">
+            <span class="plan-tab plan-tab--active">지역</span>
+            <span class="plan-tab">국가</span>
+            <span class="plan-tab">공항</span>
+            <span class="plan-tab">도시</span>
+          </div>
+        </section>
+
+        <div class="locale-bar">대한민국 · 한국어 · ₩ KRW</div>
+      </main>
+    </div>
+
+    <template id="destination-item-template">
+      <li>
+        <button type="button" class="option-item" data-destination="">
+          <span class="option-code"></span>
+          <span class="option-name"></span>
+        </button>
+      </li>
+    </template>
+
+    <div class="result-popup" id="results" hidden>
+      <div
+        class="result-popup-sheet"
+        role="dialog"
+        aria-modal="true"
+        aria-label="검색 결과"
+      >
+        <button type="button" class="result-close" id="result-close" aria-label="닫기">
+          ×
+        </button>
+        <div
+          class="result-content"
+          id="result-content"
+          data-origin="Seoul"
+          data-destination=""
+          data-date=""
+        ></div>
+      </div>
+    </div>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
